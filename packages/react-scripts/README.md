@@ -14,7 +14,7 @@ First you should delete the current react-scripts module
 `yarn remove react-scripts`
 
 Then you install mine:  
-`yarn add @stanfaas/react-scripts`
+`yarn add cra-multiple-endpoints`
 
 **Concerned?**  
 I can imagine you being concerned about react-scripts not being updated now. But don't you worry. This repo is using [Pull](https://github.com/wei/pull) to keep it synced with the real one.
