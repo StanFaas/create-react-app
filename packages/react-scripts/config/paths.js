@@ -12,6 +12,9 @@ const path = require('path');
 const fs = require('fs');
 const url = require('url');
 
+// Adding the possibility to add custom entrypoints
+const entryPoint = process.env.ENTRY || 'index';
+
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
 const appDirectory = fs.realpathSync(process.cwd());
@@ -77,10 +80,12 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp(
+    `build${entryPoint === 'index' ? '/app' : `/${entryPoint}`}`
+  ),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appHtml: resolveApp(`public/${entryPoint}.html`),
+  appIndexJs: resolveModule(resolveApp, `src/${entryPoint}.js`),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -100,10 +105,12 @@ const resolveOwn = relativePath => path.resolve(__dirname, '..', relativePath);
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp(
+    `build${entryPoint === 'index' ? '/app' : `/${entryPoint}`}`
+  ),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appHtml: resolveApp(`public/${entryPoint}.html`),
+  appIndexJs: resolveModule(resolveApp, `src/${entryPoint}`),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
@@ -135,10 +142,12 @@ if (
   module.exports = {
     dotenv: resolveOwn('template/.env'),
     appPath: resolveApp('.'),
-    appBuild: resolveOwn('../../build'),
+    appBuild: resolveApp(
+      `../../build${entryPoint === 'index' ? '' : `/${entryPoint}`}`
+    ),
     appPublic: resolveOwn('template/public'),
-    appHtml: resolveOwn('template/public/index.html'),
-    appIndexJs: resolveModule(resolveOwn, 'template/src/index'),
+    appHtml: resolveOwn(`template/public/${entryPoint}.html`),
+    appIndexJs: resolveModule(resolveOwn, `template/src/${entryPoint}`),
     appPackageJson: resolveOwn('package.json'),
     appSrc: resolveOwn('template/src'),
     appTsConfig: resolveOwn('template/tsconfig.json'),
