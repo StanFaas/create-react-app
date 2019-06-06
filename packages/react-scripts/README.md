@@ -1,6 +1,6 @@
 # CRA Multiple endpoints
 
-A modified react-scripts fork which allows you to setup custom endpoints for your Create React App projects.
+A modified react-scripts fork which allows you to setup custom endpoints for your Create React App projects. No ejecting needed.
 
 ## Motivation
 
