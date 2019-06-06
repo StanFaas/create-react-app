@@ -1,10 +1,10 @@
-# Multiple entries
+# CRA Multiple endpoints
 
-A modified react-scripts fork which allows you to setup custom entries for your Create React App projects.
+A modified react-scripts fork which allows you to setup custom endpoints for your Create React App projects.
 
 ## Motivation
 
-React looks for your index.html and index.js files to build/start your project. I've changed this so that you can have multiple entries in one CRA project.
+React looks for your index.html and index.js files to build/start your project. I've changed this so that you can have multiple endpoints in one CRA project.
 
 A simple use case would be to have a normal `/` endpoint and a `/admin` one, with different builds too.
 
