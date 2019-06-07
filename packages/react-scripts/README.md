@@ -10,6 +10,11 @@ A simple use case would be to have a normal `/` endpoint and a `/admin` one, wit
 
 ## Installation
 
+**If you start a new project:**  
+When you start a new project you can easily add my module like this:  
+`create-react-app your-app-name --scripts-version cra-multiple-endpoints`
+
+**If you have an existing project:**  
 First you should delete the current react-scripts module  
 `yarn remove react-scripts`
 
