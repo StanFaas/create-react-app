@@ -81,7 +81,7 @@ module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp(
-    `build${entryPoint === 'index' ? '/app' : `/${entryPoint}`}`
+    `build${entryPoint !== 'index' ? `/${entryPoint}` : ''}`
   ),
   appPublic: resolveApp('public'),
   appHtml: resolveApp(`public/${entryPoint}.html`),
@@ -106,7 +106,7 @@ module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp(
-    `build${entryPoint === 'index' ? '/app' : `/${entryPoint}`}`
+    `build${entryPoint !== 'index' ? `/${entryPoint}` : ''}`
   ),
   appPublic: resolveApp('public'),
   appHtml: resolveApp(`public/${entryPoint}.html`),
@@ -143,7 +143,7 @@ if (
     dotenv: resolveOwn('template/.env'),
     appPath: resolveApp('.'),
     appBuild: resolveApp(
-      `../../build${entryPoint === 'index' ? '' : `/${entryPoint}`}`
+      `build${entryPoint !== 'index' ? `/${entryPoint}` : ''}`
     ),
     appPublic: resolveOwn('template/public'),
     appHtml: resolveOwn(`template/public/${entryPoint}.html`),
