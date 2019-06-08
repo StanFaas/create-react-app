@@ -100,5 +100,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [
+    "endpoints",
+    "entrypoints",
+    "create-react-app",
+    "react"
+  ]
 }

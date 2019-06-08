@@ -1,12 +1,12 @@
 # CRA Multiple endpoints
 
-A modified react-scripts fork which allows you to setup custom endpoints for your Create React App projects. No ejecting needed.
+A modified react-scripts fork which allows you to setup custom entrypoints for your Create React App projects. No ejecting needed.
 
 ## Motivation
 
 React looks for your index.html and index.js files to build/start your project. I've changed this so that you can have multiple endpoints in one CRA project.
 
-A simple use case would be to have a normal `/` endpoint and a `/admin` one, with different builds too.
+A simple use case would be to have a normal `/` entrypoint and a `/admin` one, with different builds too.
 
 ## Installation
 
