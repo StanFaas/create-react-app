@@ -1,6 +1,6 @@
 {
   "name": "cra-multiple-endpoints",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Adding the possibility to export multiple entrypoints with Create React App.",
   "homepage": "https://github.com/StanFaas/create-react-app/tree/master/packages/react-scripts#readme",
   "repository": {
